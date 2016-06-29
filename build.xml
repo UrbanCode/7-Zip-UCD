@@ -26,6 +26,7 @@
 		</tstamp>
 
 		<property name="project" value="" />
+        <property name="version" value="dev" />
 		<property name="deployPluginArchiveName" value="releases/7-Zip-UCD-v${version}.zip" />
 
 		<property name="src.dir" value="${basedir}/src" />
