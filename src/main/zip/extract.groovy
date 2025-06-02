@@ -1,5 +1,5 @@
 /**
- * © Copyright IBM Corporation 2014.  
+ * ï¿½ Copyright IBM Corporation 2014.  
  * This is licensed under the following license.
  * The Eclipse Public 1.0 License (http://www.eclipse.org/legal/epl-v10.html)
  * U.S. Government Users Restricted Rights:  Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp. 
@@ -8,9 +8,10 @@
 /**
  * This is prominent notice that the 7zip Library is used.
  * Its use is covered by the GNU LESSER GENERAL PUBLIC LICENSE.
- */   
+ */
 
-import com.urbancode.air.AirPluginTool
+import com.urbancode.air.plugin.tool.AirPluginTool
+import com.urbancode.air.plugin.tool.ExtractCallback
 import net.sf.sevenzipjbinding.impl.RandomAccessFileInStream
 import net.sf.sevenzipjbinding.SevenZipException
 import net.sf.sevenzipjbinding.SevenZip

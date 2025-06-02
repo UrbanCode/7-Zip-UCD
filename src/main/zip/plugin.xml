@@ -52,7 +52,7 @@ Plugin which provides a step to extract 7zip archives.
      ]]></post-processing>
     <command program="${GROOVY_HOME}/bin/groovy">
       <arg value="-cp" />
-      <arg path="classes:lib/sevenzipjbinding-9.20-2.00beta.jar:lib/sevenzipjbinding-all-platforms-9.20-2.00beta.jar:lib/groovy-plugin-utils-1.0.jar" />
+      <arg path="classes" />
       <arg file="extract.groovy"/>
       <arg file="${PLUGIN_INPUT_PROPS}"/>
       <arg file="${PLUGIN_OUTPUT_PROPS}"/>

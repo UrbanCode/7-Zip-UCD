@@ -1,5 +1,5 @@
 /**
- * © Copyright IBM Corporation 2014.  
+ * ï¿½ Copyright IBM Corporation 2014.  
  * This is licensed under the following license.
  * The Eclipse Public 1.0 License (http://www.eclipse.org/legal/epl-v10.html)
  * U.S. Government Users Restricted Rights:  Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp. 
@@ -9,9 +9,10 @@
  * This is prominent notice that the 7zip Library is used.
  * Its use is covered by the GNU LESSER GENERAL PUBLIC LICENSE.
  */
+package com.urbancode.air.plugin.tool
 
 import net.sf.sevenzipjbinding.IArchiveExtractCallback
-import net.sf.sevenzipjbinding.ISevenZipInArchive
+import net.sf.sevenzipjbinding.InArchiveImpl
 import net.sf.sevenzipjbinding.ISequentialOutStream
 import net.sf.sevenzipjbinding.ExtractAskMode
 import net.sf.sevenzipjbinding.SevenZipException
@@ -26,7 +27,7 @@ public class ExtractCallback implements IArchiveExtractCallback {
     def folderCreated = false
     def filePath
 
-    public ExtractCallback(ISevenZipInArchive inArchive, File targetDir) {
+    public ExtractCallback(InArchiveImpl inArchive, File targetDir) {
         this.inArchive = inArchive
         this.targetDir = targetDir
     }
