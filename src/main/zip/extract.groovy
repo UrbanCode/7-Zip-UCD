@@ -10,13 +10,13 @@
  * Its use is covered by the GNU LESSER GENERAL PUBLIC LICENSE.
  */
 
-import com.urbancode.air.plugin.tool.AirPluginTool
-import com.urbancode.air.plugin.tool.ExtractCallback
+import com.urbancode.air.plugin.utils.AirPluginTool
+import com.urbancode.air.plugin.utils.ExtractCallback
 import net.sf.sevenzipjbinding.impl.RandomAccessFileInStream
 import net.sf.sevenzipjbinding.SevenZipException
 import net.sf.sevenzipjbinding.SevenZip
 
-final def workDir = new File('.').canonicalFile
+def workDir = new File('.').canonicalFile
 final def apTool = new AirPluginTool(this.args[0], this.args[1])
 final def props = apTool.getStepProperties()
 def dirOffset = props['dirOffset']

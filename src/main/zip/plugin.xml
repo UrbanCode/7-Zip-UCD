@@ -11,7 +11,7 @@
 -->
 <plugin xmlns="http://www.urbancode.com/PluginXMLSchema_v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <header>
-    <identifier id="com.urbancode.plugin.7zip" name="7zip" version="1"/>
+    <identifier id="com.urbancode.plugin.7zip" name="7zip" version="2"/>
     <description>
 Plugin which provides a step to extract 7zip archives.
 	  </description>
@@ -52,7 +52,7 @@ Plugin which provides a step to extract 7zip archives.
      ]]></post-processing>
     <command program="${GROOVY_HOME}/bin/groovy">
       <arg value="-cp" />
-      <arg path="classes" />
+      <arg path="classes:lib/*" />
       <arg file="extract.groovy"/>
       <arg file="${PLUGIN_INPUT_PROPS}"/>
       <arg file="${PLUGIN_OUTPUT_PROPS}"/>

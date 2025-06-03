@@ -9,10 +9,10 @@
  * This is prominent notice that the 7zip Library is used.
  * Its use is covered by the GNU LESSER GENERAL PUBLIC LICENSE.
  */
-package com.urbancode.air.plugin.tool
+package com.urbancode.air.plugin.utils
 
 import net.sf.sevenzipjbinding.IArchiveExtractCallback
-import net.sf.sevenzipjbinding.InArchiveImpl
+import net.sf.sevenzipjbinding.impl.InArchiveImpl
 import net.sf.sevenzipjbinding.ISequentialOutStream
 import net.sf.sevenzipjbinding.ExtractAskMode
 import net.sf.sevenzipjbinding.SevenZipException

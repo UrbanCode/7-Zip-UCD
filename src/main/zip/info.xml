@@ -134,6 +134,9 @@
 	  <release-note plugin-version="1">
 Initial release of the 7zip plugin which provides a step to extract a 7z archive file.
 	  </release-note>
+    <release-note plugin-version="2">
+      Added support for Groovy 3 version
+    </release-note>
     
   </release-notes>
 </pluginInfo>
