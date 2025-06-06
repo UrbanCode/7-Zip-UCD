@@ -1,0 +1,54 @@
+name: Gradle CD
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+
+  create-release:
+
+    permissions: write-all
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: '8'
+          distribution: 'adopt-openj9'
+
+      - name: Set up Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Determine plugin version
+        id: getPluginVersion
+        run: |
+          # Get version from plugin.xml
+          pluginXmlVersion=$(grep -oP '<identifier .* version="\K[^"]+' src/main/zip/plugin.xml)
+          echo "pluginXmlVersion is $pluginXmlVersion"
+
+          # Get the latest short hash
+          latestShortHash=$(git rev-parse --short $GITHUB_SHA)
+          echo "latest short hash is $latestShortHash"
+
+          echo "value=$pluginXmlVersion.$latestShortHash" >> $GITHUB_OUTPUT
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x ./gradlew
+
+      - name: Create plugin zip
+        run: ./gradlew "-PpluginVersion=${{ steps.getPluginVersion.outputs.value }}"
+
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.getPluginVersion.outputs.value }}
+          files: "build/distributions/*.zip"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
