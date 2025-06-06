@@ -102,8 +102,9 @@
     <meta name="description" content=""/>
     <meta name="keywords" content=""/>  
   </meta-html>
-    
-  <release-version>1</release-version>
+
+  <!-- Do not change the release-version, the build process injects it. -->
+  <release-version>@RELEASE_VERSION@</release-version>
     
     
   <release-notes>
